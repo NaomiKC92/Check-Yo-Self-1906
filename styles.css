@@ -75,8 +75,7 @@ aside {
   margin-bottom: 35px;
   width: 91%;
   font-size: 18px;
-  font-weight: 700;
-  color: #ffc30c;
+  color: #3c6577;
   padding-left: 10px;
 }
 
@@ -89,6 +88,36 @@ aside {
 
 .aside__item--input {
   border-radius: 3px 0 0 3px;
+  width: 110%;
+}
+
+.list__display--area {
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+li {
+  margin-left: -30px;
+  list-style-type: none;
+}
+
+li:before {
+  content: '';
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-size: 20px;
+  background-image: url('images/delete.svg');
+  background-repeat: no-repeat;
+  padding-right: 5px;
+}
+
+.card__unchecked {
+  height: 20px;
+  width: 20px;
 }
 
 .input__plus--img {
@@ -171,5 +200,9 @@ aside {
   font-weight: 600;
 }
 
+.card__footer--img {
+  height: 30px;
+  width: 30px;
+}
 
 
