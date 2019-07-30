@@ -2,6 +2,12 @@
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 header {
@@ -149,7 +155,9 @@ li {
   margin-bottom: 40px;
 }
 
+
 .main__card--container {
+  display: flex;
   background-color: #f3f6f7;
   width: 67%;
   height: 100%;
@@ -160,6 +168,7 @@ li {
 }
 
 .task__card {
+  column-width: 13em;
   border: 3px solid #c7d3d8;
   height: 50%;
   width: 40%;
@@ -182,6 +191,11 @@ li {
   height: 62%;
   border-top: 3px solid #c7d3d8;
   border-bottom: 3px solid #c7d3d8;
+}
+
+.card__body--yellow {
+  border-top: 3px solid #ffc30c;
+  border-bottom: 3px solid #ffc30c;
 }
 
 .task__card--footer {
