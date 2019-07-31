@@ -14,4 +14,12 @@ class List {
     localStorage.getItem("toDoItems", JSON.parse(ideas));
   };
 
+  updateToDo() {
+
+  };
+
+  updateTasks() {
+
+  };
+
 };

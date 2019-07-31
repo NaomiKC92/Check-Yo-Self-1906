@@ -1,7 +1,6 @@
 var cardDisplay = document.querySelector('.main__card--container');
 var taskCard = document.querySelector('.task__card')
 var makeTaskBtn = document.querySelector('.aside__task--btn');
-var asideListDisplay = document.querySelector('.list__display--area');
 var titleInput = document.querySelector('.aside__title--input');
 var itemInput = document.querySelector('.aside__item--input');
 var clearBtn = document.querySelector('.aside__clear--btn');
@@ -26,7 +25,7 @@ itemInput.addEventListener('keyup', enableMakeTaskBtn);
 titleInput.addEventListener('keyup', enableClearBtn);
 itemInput.addEventListener('keyup', enableClearBtn);
 listSection.addEventListener('DOMCharacterDataModified', enableClearBtn);
-listDisplay.addEventListener('click', deleteCard);
+listDisplay.addEventListener('click', deleteListItem);
 cardDisplay.addEventListener('click', displayHandler)
 
 
@@ -76,7 +75,7 @@ function retrieveIndex(event) {
   return toDoList.findIndex(function(item) {return item.id === listId});
 };
 
-function deleteCard(event) {
+function deleteListItem(event) {
   event.target.parentNode.remove();
 };
 
