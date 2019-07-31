@@ -55,19 +55,16 @@ function markUrgent(e) {
   toDoList[i].urgent = !toDoList[i].urgent;
   var urgentImg = e.target;
   toDoList[i].urgent === false ? urgentImg.src = 'images/urgent.svg' : urgentImg.src = 'images/urgent-active.svg';
-  changeCardColor(i);
+  changeCardColor(i, e);
   toDoList[i].saveToStorage(toDoList);
 };
 
-function changeCardColor(index) {
-  toDoList[index].urgent === true ? handleClassList("add") : handleClassList("remove");
+function changeCardColor(index, e) {
+  toDoList[index].urgent === true ? handleClassList("add", e) : handleClassList("remove", e);
 };
 
-function handleClassList(method) {
-  var taskCard = document.querySelector('.task__card');
-  var cardBody = document.querySelector('.card__body--list')
-  taskCard.classList[method]('card__yellow')
-  cardBody.classList[method]('card__body--yellow')
+function handleClassList(method, e) {
+  e.target.closest('article').classList[method]('card__yellow');
 }
 
 function getListIndex(event) {
