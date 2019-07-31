@@ -182,10 +182,11 @@ li {
 
 .main__card--container {
   background-color: #f3f6f7;
-  column-width: 2em;
+  column-count: 2;
   display: flex;
   flex-wrap: wrap;
   min-height: 1000px;
+  padding: 10px;
   width: 100%;
 }
 

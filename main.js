@@ -61,22 +61,22 @@ function handleClassList(method, e) {
   e.target.closest('article').classList[method]('card__yellow');
 }
 
-function getListIndex(event) {
-  var cardIndex = retrieveIndex(event);
+function getListIndex(e) {
+  var cardIndex = retrieveIndex(e);
   var listIndex = toDoList[cardIndex].listItems.findIndex( function(task) {
-    return task.id === event.target.id
+    return task.id === e.target.id
   });
     return parseInt(listIndex)
 };
 
-function retrieveIndex(event) {
-  var list = event.target.closest('.task__card');
+function retrieveIndex(e) {
+  var list = e.target.closest('.task__card');
   var listId = parseInt(list.dataset.id);
   return toDoList.findIndex(function(item) {return item.id === listId});
 };
 
-function deleteListItem(event) {
-  event.target.parentNode.remove();
+function deleteListItem(e) {
+  e.target.parentNode.remove();
 };
 
 function enableMakeTaskBtn() {
@@ -150,23 +150,23 @@ function addTasksToCard(list) {
 };
 
 function removeFromStorage() {
-  var taskListid = getListId(event);
+  var taskListid = getListId(e);
   toDoList = toDoList.filter( function(list) {return list.id !== taskListid;});
   var newArray = new List('title', 'listItems');
   newArray.saveToStorage(toDoList);
 };
 
-function deleteTaskCard(event) {
-  if (event.target.classList[1] === 'card__delete--img') {
-    var list = event.target.closest('.task__card');
+function deleteTaskCard(e) {
+  if (e.target.classList[1] === 'card__delete--img') {
+    var list = e.target.closest('.task__card');
     list.remove();
     insertMsg();
     removeFromStorage();
   };
 };
 
-function getListId(event) {
-  return parseInt(event.target.closest('.task__card').dataset.id);
+function getListId(e) {
+  return parseInt(e.target.closest('.task__card').dataset.id);
 };
 
 function removeMsg() {
