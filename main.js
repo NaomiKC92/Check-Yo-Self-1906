@@ -149,7 +149,7 @@ function addTasksToCard(list) {
   return items;
 };
 
-function removeFromStorage() {
+function removeFromStorage(e) {
   var taskListid = getListId(e);
   toDoList = toDoList.filter( function(list) {return list.id !== taskListid;});
   var newArray = new List('title', 'listItems');
@@ -161,7 +161,7 @@ function deleteTaskCard(e) {
     var list = e.target.closest('.task__card');
     list.remove();
     insertMsg();
-    removeFromStorage();
+    removeFromStorage(e);
   };
 };
 
