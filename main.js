@@ -15,6 +15,7 @@ var newTasks = [];
 
 checkLocalStorage();
 appendList();
+insertMsg();
 
 makeTaskBtn.addEventListener('click', createTaskList);
 plusBtn.addEventListener('click', pushListItems);
@@ -33,12 +34,6 @@ function displayHandler(e) {
   if (e.target.classList[1] === 'card__urgent--img') markUrgent(e);
   if (e.target.className === 'item__unchecked') markChecked(e);
 };
-
-// function toggleChecked(event) {
-//   var cardIndex = retrieveIndex(event);
-//   var listIndex = getListIndex(event);
-//   toDoList[cardIndex].listItems[listIndex].checked = !toDoList[cardIndex].listItems[listIndex].checked
-// };
 
 function markChecked(e) {
   var cardIndex = retrieveIndex(e);
@@ -126,6 +121,7 @@ function createTaskList() {
   list.saveToStorage(toDoList)
   displayTaskList(list);
   clearInputs();
+  removeMsg();
 };
 
 function checkLocalStorage() {
@@ -165,6 +161,7 @@ function deleteTaskCard(event) {
   if (event.target.classList[1] === 'card__delete--img') {
     var list = event.target.closest('.task__card');
     list.remove();
+    insertMsg();
     removeFromStorage();
   };
 };
@@ -172,6 +169,23 @@ function deleteTaskCard(event) {
 function getListId(event) {
   return parseInt(event.target.closest('.task__card').dataset.id);
 };
+
+function removeMsg() {
+  var msg = document.querySelector(".task__msg");
+  if (msg) {
+    msg.remove(msg)
+  }
+}
+
+function insertMsg() {
+  if (cardDisplay.innerHTML === '' || cardDisplay.innerHTML === ' ') {
+    cardDisplay.insertAdjacentHTML('afterbegin',
+      `<article class='task__msg'>
+    <p class='task__msg--text'>Add To Do Lists Here</p>
+  </article>`)
+  };
+};
+
 
 function displayTaskList(obj) {
 cardDisplay.insertAdjacentHTML('afterbegin', `<article class='task__card ${obj.urgent ? 'card__yellow' : 'null'}' data-id=${obj.id}>

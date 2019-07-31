@@ -67,7 +67,7 @@ aside {
   display: flex;
   flex-direction: column;
   min-height: 1000px;
-  width: 33%;
+  width: 40%;
 }
 
 .main__card--container {
@@ -75,6 +75,7 @@ aside {
   column-width: 2em;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   min-height: 1000px;
   width: 100%;
 }
@@ -167,6 +168,10 @@ li {
   width: 18%;
 }
 
+.input__plus--img:hover {
+  cursor: pointer;
+}
+
 .aside__bottom {
   margin-left: 7%;
   margin-top: 40px;
@@ -183,6 +188,12 @@ li {
   height: 60px;
   margin-bottom: 25px;
   width: 93%;
+}
+
+.aside__btn:hover {
+  cursor: pointer;
+  background-color: #ef4a23;
+  border: 3px solid #782616;
 }
 
 .aside__clear--btn {
@@ -236,6 +247,12 @@ li {
   width: 32px;
 }
 
+.item__unchecked:hover,
+.card__footer--img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
 .card__img--block {
   align-content: center;
   height: 60px;
@@ -249,13 +266,71 @@ li {
   border: 3px solid #ffc30c;
 }
 
-
-@media screen and (max-width: 600px) {
-  
+.task__msg--text {
+  display: flex;
+  margin-top: 45%;
+  color: #c7d3d8;
+  font-size: 300%;
+  padding: 10px;
+  border: 10px double #c7d3d8;
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1120px) {
+  .header__search--block {
+    width: 35%;
+  }
+
+  .task__card {
+    width: 44%;
+  }
+
+  aside {
+    width: 45%;
+  }
+
+  .header {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 860px) {
+
+  .header__search--block {
+    margin-right: 2%;
+    width: 38%;
+  }
+
+  h1 {
+    font-size: 256%;
+  }
+
+  aside {
+    align-content: center;
+    width: 75%;
+  }
+
+  .aside__title--input {
+    width: 94%;
+  }
+
+  .task__card {
+    width: 88%;
+  }
+
+  .header__search--block {
+    margin-right: 3%;
+    width: 35%;
+  }
+
+  .main__card--container {
+    justify-content: center;
+  }
+
+}
+
+
+@media screen and (max-width: 646px) {
 
   body {
     display: flex;
