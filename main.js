@@ -38,9 +38,9 @@ function markChecked(e) {
   var cardIndex = retrieveIndex(e);
   var listIndex = getListIndex(e);
   toDoList[cardIndex].listItems[listIndex].checked = !toDoList[cardIndex].listItems[listIndex].checked;
-  e.target.src.includes('images/checkbox.svg') ?
-    e.target.src = 'images/checkbox-active.svg' :
-    e.target.src = 'images/checkbox.svg';
+  e.target.src.includes('Images/checkbox.svg') ?
+    e.target.src = 'Images/checkbox-active.svg' :
+    e.target.src = 'Images/checkbox.svg';
   toDoList[cardIndex].saveToStorage(toDoList);
 };
 
@@ -48,7 +48,7 @@ function markUrgent(e) {
   var i = retrieveIndex(e);
   toDoList[i].urgent = !toDoList[i].urgent;
   var urgentImg = e.target;
-  toDoList[i].urgent === false ? urgentImg.src = 'images/urgent.svg' : urgentImg.src = 'images/urgent-active.svg';
+  toDoList[i].urgent === false ? urgentImg.src = 'Images/urgent.svg' : urgentImg.src = 'Images/urgent-active.svg';
   changeCardColor(i, e);
   toDoList[i].saveToStorage(toDoList);
 };
@@ -137,14 +137,14 @@ function displayList() {
   var id = Date.now();
   if (itemInput.value !== '') {
   listDisplay.insertAdjacentHTML('beforeend', `
-  <li class='list__items' id='${id}'><img src='images/delete.svg' class='list__delete--img'>${itemInput.value}</li>`)
+  <li class='list__items' id='${id}'><img src='Images/delete.svg' class='list__delete--img'>${itemInput.value}</li>`)
   };
 };
 
 function addTasksToCard(list) {
   var items = '';
   list.listItems.forEach( function(eachItem) {
-    items += `<li> <img src=${eachItem.checked ? 'images/checkbox-active.svg' : 'images/checkbox.svg'} class='item__unchecked' id='${eachItem.id}'> ${eachItem.text} </li>`
+    items += `<li> <img src=${eachItem.checked ? 'Images/checkbox-active.svg' : 'Images/checkbox.svg'} class='item__unchecked' id='${eachItem.id}'> ${eachItem.text} </li>`
   });
   return items;
 };
@@ -198,12 +198,12 @@ ${addTasksToCard(obj)}
 </section>
 <section class='task__card--footer'>
   <div class='card__img--block'>
-    <img src =${obj.urgent ? 'images/urgent-active.svg' :
-    'images/urgent.svg'} class='card__footer--img card__urgent--img'>
+    <img src =${obj.urgent ? 'Images/urgent-active.svg' :
+    'Images/urgent.svg'} class='card__footer--img card__urgent--img'>
     <p>URGENT</p>
   </div>
   <div class='card__img--block'>
-    <img src='images/delete.svg' class='card__footer--img card__delete--img'>
+    <img src='Images/delete.svg' class='card__footer--img card__delete--img'>
     <P>DELETE</P>
   </div>
 </section>
