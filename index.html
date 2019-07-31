@@ -1,56 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Check Yo Self</title>
-    <link rel="stylesheet" href="styles.css" type="text/css">
-    <link
-     href=
-    "https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap"
-    rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <h1>CHECK <span class='header__yo'>YO'</span> SELF</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Check Yo Self</title>
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>CHECK <span class='header__yo'>YO'</span> SELF</h1>
+    <form class='header__search--block'>
+      <img src='images/search.svg' class='header__search--img'>
       <input type='text' placeholder='Search' class='header__search--input'>
-    </header>
-    <main>
-      <aside>
-        <section class='aside__tasks--form'>
-          <label class='aside__input--label'>Task Title</label>
-          <input type='text' class='aside__input aside__title--input'>
-          <section class='list__display--area'>
-
-          </section>
-          <label class='aside__input--label'>Task Item</label>
-          <div class='input__img--block'>
-            <input type='text' class='aside__input aside__item--input'>
-            <img src='images/plus.svg' class='input__plus--img' type='submit'>
-          </div>
-          <button class='aside__btn aside__task--btn'>Make Task List</button>
-          <button class='aside__btn aside__clear--btn'>Clear All</button>
+    </form>
+  </header>
+  <main>
+    <aside>
+      <section class='aside__tasks--form'>
+        <label class='aside__input--label'>Task Title</label>
+        <input type='text' class='aside__input aside__title--input'>
+        <section class='list__display--area'>
+          <ul class='displayed__list'></ul>
         </section>
-        <section class='aside__bottom'>
-          <button class='aside__btn aside__urgency--btn'>Filter by Urgency</button>
-        </section>
-      </aside>
-      <section class='main__card--container'>
-        <!-- <article class='task__card'>
-          <section class='task__card--header'>
-            <p>Task Title</p>
-          </section>
-          <section class='card__body--list'>
-
-          </section>
-          <section class='task__card--footer'>
-            <p>URGENT</p>
-            <P>DELETE</P>
-          </section>
-        </article> -->
+        <label class='aside__input--label'>Task Item</label>
+        <div class='input__img--block'>
+          <input type='text' class='aside__input aside__item--input'>
+          <img src='images/plus.svg' class='input__plus--img' type='submit'>
+        </div>
+        <button class='aside__btn aside__task--btn' disabled>Make Task List</button>
+        <button class='aside__btn aside__clear--btn' disabled>Clear All</button>
       </section>
-    </main>
-  </body>
-  <script src="todo-list.js"></script>
-	<script src="main.js"></script>
+      <section class='aside__bottom'>
+        <button class='aside__btn aside__urgency--btn'>Filter by Urgency</button>
+      </section>
+    </aside>
+    <section class='main__card--container'></section>
+  </main>
+</body>
+<script src="todo-list.js"></script>
+<script src="main.js"></script>
 </html>
